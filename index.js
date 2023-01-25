@@ -49,4 +49,19 @@ var polygonTwo = L.polygon([
 polygonOne.bindPopup("Mariinsky Park");
 polygonTwo.bindPopup("Kyiv River Station");
 
+function onMapClick(e) {
+  alert("You clicked the map at " + e.latlng);
+}
 
+map.on('click', onMapClick);
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
