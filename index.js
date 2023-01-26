@@ -5,6 +5,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+
 var markerOne = L.marker([50.463279, 30.545003]).addTo(map);
 var markerTwo = L.marker([50.450035, 30.524059]).addTo(map);
 
@@ -58,10 +59,10 @@ map.on('click', onMapClick);
 var popup = L.popup();
 
 function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
+  popup
+    .setLatLng(e.latlng)
+    .setContent("You clicked the map at " + e.latlng.toString())
+    .openOn(map);
 }
 
 map.on('click', onMapClick);
